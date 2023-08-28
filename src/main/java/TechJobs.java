@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+        import java.util.HashMap;
+        import java.util.Map;
+        import java.util.Scanner;
 
 /**
  * Created by LaunchCode
@@ -119,7 +119,34 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+            return;
+        }
 
-        System.out.println("printJobs is not implemented yet");
+        for (HashMap<String, String> job : someJobs) {
+            System.out.println("\n*****");
+
+            String positionType = job.get("position type");
+            String name = job.get("name");
+            String employer = job.get("employer");
+            String location = job.get("location");
+            String coreCompetency = job.get("core competency");
+
+            System.out.println("position type: " + positionType);
+            System.out.println("name: " + name);
+            System.out.println("employer: " + employer);
+            System.out.println("location: " + location);
+
+            if (coreCompetency.contains(",")) {
+                System.out.println("core competency: " + coreCompetency);
+            } else {
+                System.out.println("core competency: " + coreCompetency);
+            }
+
+            System.out.println("*****");
+        }
+
+//        System.out.println("printJobs is not implemented yet");
     }
 }
